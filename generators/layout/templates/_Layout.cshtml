@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - <%= websiteName %></title>
+
+    <environment names="Development">
+        
+    </environment>
+    <environment names="Staging,Production">
+       
+    </environment>
+</head>
+<body>
+    <nav>
+        <ul>
+        <% for(var i=0; i < menuItems.length; i++) { %>
+            <% if(menuItems[i].IsMenuItem) { %>
+                <li><a href='<%= menuItems[i].Link %>'><%= menuItems[i].Name %><a/></li>
+            <% } %>
+        <% } %>
+        </ul>
+    </nav>
+    <main>
+        @RenderBody()
+        <hr />
+        <footer>
+           <p>&copy; 2017 - <%= websiteName %></p>
+        </footer>
+    </main>
+
+    <environment names="Development">
+       
+    </environment>
+    <environment names="Staging,Production">
+        
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

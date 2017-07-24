@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "<%= controllerName %>";
+}
+
+<h2><%= controllerName %></h2>
+
+<h3><a href=''></a></h3>
+
+<% for(var i=0; i < posts.length; i++) { %>
+    <figure>
+        <a href='<%= posts[i].url %>'><img src="<%= posts[i].link_image %>" /></a>
+        <figcaption><%= posts[i].title %></figcaption>
+    </figure>
+<% } %>

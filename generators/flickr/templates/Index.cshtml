@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "<%= controllerName %>";
+}
+
+<h2><%= controllerName %></h2>
+
+
+<% for(var i=0; i < images.length; i++) { %>
+    <figure>
+        <img src="<%= images[i].sizes['Large Square'].source %>" />
+        <figcaption><%= images[i].title %> - <%= images[i].exif.Make %> - <%= images[i].exif.Model %></figcaption>
+    </figure>
+<% } %>

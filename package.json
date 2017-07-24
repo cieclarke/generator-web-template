@@ -1,0 +1,30 @@
+{
+  "name": "generator-ciec-dotnetcore-web-template",
+  "version": "1.0.0",
+  "description": "test",
+  "repository": {
+    "url": "http://cieclarke.com"
+  },
+  "main": "app/index.js",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "generators/app",
+    "generators/router"
+  ],
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "flickrapi": "^0.6.0",
+    "lodash": "^4.17.4",
+    "promise": "^8.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "yeoman-generator": "^0.24.1"
+  },
+  "author": "ciec",
+  "license": "ISC"
+}

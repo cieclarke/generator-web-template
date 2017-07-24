@@ -1,0 +1,31 @@
+﻿header {
+  background: url('#{$background-header}') no-repeat fixed center center / cover;
+  box-shadow: 0 -5px 4px -5px $edge-shadow-colour inset;
+  min-height: 8rem;
+
+  &::before {
+    box-shadow: 0 0 3px 1px $edge-shadow-colour;
+    content: '';
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+
+  & .nav-button-show {
+    position: absolute;
+    right: 1.75rem;
+    top: 1.5rem;
+  }
+}
+
+.logo-site {
+  padding-top: .5rem;
+
+  & a {
+    color: darken(palette-colour($palette-mono, 'lightest'), 10%);
+    font-family: #{$base-heading-font-family};
+    font-size: calc-rem(28px)#{'rem'};
+    text-decoration: none;
+    text-shadow: 1px 1px 1px $edge-shadow-colour;
+  }
+}
