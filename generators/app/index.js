@@ -1,14 +1,5 @@
 const yeoman = require('yeoman-generator')
 var _ = require("lodash")
-var Util = {}
-const availablePages = [
-    {optionName : 'homePage', templateName : 'home', controllerName : 'Home', displayName : 'Home'},
-    {optionName : 'aboutPage', templateName : 'about', controllerName : 'About', displayName : 'About'},
-    {optionName : 'workPage', templateName : 'work', controllerName : 'Work', displayName : 'Work'},
-    {optionName : 'contactPage', templateName : 'contact', controllerName : 'Contact', displayName : 'Contact'},
-    {optionName : 'flickrPage', templateName : 'flickr', controllerName : 'Flickr', displayName : 'Flickr Gallery'},
-    {optionName : 'tumblrPage', templateName : 'tumblr', controllerName : 'Tumblr', displayName : 'Tumblr Blog'}
-]
 
 module.exports = class extends yeoman.Base {
         constructor(args, opts) {
