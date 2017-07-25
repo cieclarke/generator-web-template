@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "test",
   "repository": {
-    "url": "http://cieclarke.com"
+    "url": "https://github.com/cieclarke/generator-web-template"
   },
   "main": "app/index.js",
   "keywords": [
@@ -23,6 +23,7 @@
     "promise": "^8.0.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
+    "yeoman-environment": "^2.0.0",
     "yeoman-generator": "^0.24.1"
   },
   "author": "ciec",
