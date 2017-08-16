@@ -18,8 +18,13 @@
   ],
   "dependencies": {
     "bluebird": "^3.5.0",
+    "bootstrap": "^4.0.0-beta",
+    "gulp": "^3.9.1",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.1.0",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
+    "popper.js": "^1.12.1",
     "promise": "^8.0.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
@@ -27,5 +32,8 @@
     "yeoman-generator": "^0.24.1"
   },
   "author": "ciec",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }

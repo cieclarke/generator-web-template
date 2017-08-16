@@ -10,8 +10,11 @@ module.exports = class extends yeoman.Base {
 
     writing() {
         
+        var path = '../../../node_modules/bootstrap/scss/bootstrap.scss'
+
         var result = sass.renderSync({
-            file: this.templatePath('default.scss'),
+            //file: this.templatePath('default.scss'),
+            file: this.templatePath(path),
             outputStyle: 'compressed',
             outFile: 'main.css',
             sourceMap: true, // or an absolute or relative (to outFile) path
