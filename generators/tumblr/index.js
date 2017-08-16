@@ -79,7 +79,7 @@ module.exports = class extends yeoman.Base {
         
         posts().done((t) => {
             console.log(t)
-            /*
+            
             this.fs.copyTpl(
                 this.templatePath('Index.cshtml'),
                 this.destinationPath('Views/Tumblr/Index.cshtml'),
@@ -88,7 +88,7 @@ module.exports = class extends yeoman.Base {
                     posts : t
                 }
             )
-            */
+            
         })
 
 

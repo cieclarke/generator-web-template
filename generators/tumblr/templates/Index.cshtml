@@ -8,7 +8,16 @@
 
 <% for(var i=0; i < posts.length; i++) { %>
     <figure>
-        <a href='<%= posts[i].url %>'><img src="<%= posts[i].link_image %>" /></a>
-        <figcaption><%= posts[i].title %></figcaption>
+        <% if (posts[i].link_image) { %>
+            <a href='<%= posts[i].url %>'>
+                <img src="<%= posts[i].link_image %>" />
+            </a>
+        <% } else { %>
+            <a href='<%= posts[i].url %>'>
+                <%= posts[i].title.replace('@', '@@') %>
+            </a>
+        <% } %>
+        <figcaption><%= posts[i].summary.replace('@', '@@') %></figcaption>
     </figure>
+    
 <% } %>
