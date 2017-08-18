@@ -6,25 +6,33 @@ module.exports = class extends yeoman.Base {
     constructor(args, opts) {
             super(args, opts)
 
+            this.option('outputStyle', {
+                type: String,
+                alias: 'o',
+                required: false,
+                desc: 'outputStyle option for node-sass',  
+                default: 'expanded'
+            })
     }
 
     writing() {
-        
-        var path = '../../../node_modules/bootstrap/scss/bootstrap.scss'
 
-        var result = sass.renderSync({
-            //file: this.templatePath('default.scss'),
-            file: this.templatePath(path),
-            outputStyle: 'compressed',
-            outFile: 'main.css',
-            sourceMap: true, // or an absolute or relative (to outFile) path
-            importer: (url, prev, done) => {
-                return {file: result.path, contents: result.data};
+        sass.render({
+            file: this.templatePath('app.scss'),
+            outputStyle: this.options['outputStyle'], //nested, expanded, compact, compressed
+            outFile: this.destinationPath('wwwroot/css/main.css.map'),
+            sourceMap: true,
+            includePaths: [ this.templatePath() ]
+        }, (err, result) => { 
+            if(err) {
+                console.log(err)
             }
+            this.fs.write(this.destinationPath('wwwroot/css/main.css'), result.css)
+            this.fs.write(this.destinationPath('wwwroot/css/main.css.map'), result.map)
+
         })
         
-        this.fs.write(this.destinationPath('wwwroot/css/main.css'), result.css)
-        this.fs.write(this.destinationPath('wwwroot/css/main.css.map'), result.map)
+
     }
 
 }

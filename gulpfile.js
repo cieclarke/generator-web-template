@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var photos = require('./generators/flickr/photos.js')
 var _ = require('lodash')
-var sass = require('gulp-sass')
 
 var argValue = (key) => {
     var index = _.findIndex(process.argv, (i) => {
@@ -21,11 +20,3 @@ gulp.task('photos', function() {
 
 })
 
-gulp.task('css', () => {
-    
-    return gulp.src('node_modules/bootstrap/scss/bootstrap.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'))
-
-
-})
