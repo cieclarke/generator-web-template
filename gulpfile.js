@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var photos = require('./generators/flickr/photos.js')
 var _ = require('lodash')
-var sass = require('node-sass')
+var sass = require('gulp-sass')
 
 var argValue = (key) => {
     var index = _.findIndex(process.argv, (i) => {
@@ -21,21 +21,11 @@ gulp.task('photos', function() {
 
 })
 
-gulp.task('css', function() {
+gulp.task('css', () => {
     
-    var path = 'node_modules/bootstrap/scss/bootstrap.scss'
-    
-    var result = sass.renderSync({
-        //file: this.templatePath('default.scss'),
-        file: path,
-        outputStyle: 'compressed',
-        outFile: 'main.css',
-        sourceMap: false, // or an absolute or relative (to outFile) path
-        importer: (url, prev, done) => {
-            return {file: result.path, contents: result.data};
-        }
-    })
-    
-    console.log(result.css)
-    
+    return gulp.src('node_modules/bootstrap/scss/bootstrap.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'))
+
+
 })
