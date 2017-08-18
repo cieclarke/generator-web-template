@@ -30,14 +30,12 @@ gulp.task('css', function() {
         file: path,
         outputStyle: 'compressed',
         outFile: 'main.css',
-        sourceMap: true, // or an absolute or relative (to outFile) path
+        sourceMap: false, // or an absolute or relative (to outFile) path
         importer: (url, prev, done) => {
             return {file: result.path, contents: result.data};
         }
     })
     
     console.log(result.css)
-    //this.fs.write(this.destinationPath('wwwroot/css/main.css'), result.css)
-    //this.fs.write(this.destinationPath('wwwroot/css/main.css.map'), result.map)    
     
 })
