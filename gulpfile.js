@@ -15,7 +15,7 @@ gulp.task('photos', function() {
     
     photos(flickrKey).done((photos) => { 
         
-        
+        console.log(photos)
     })
 
 })
