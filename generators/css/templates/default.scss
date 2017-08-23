@@ -1,45 +1,26 @@
 
-$success: #00C000;
-$error: #FFFF00;
-$warning: #FF0000;
-
-
-body {
-  padding: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.bg-ciec-y, .btn-ciec-y {
+  background-color: #F6D155;
 }
 
-.vendor-prefix-test {
-	display: flex;
+.bg-ciec-b, .btn-ciec-b {
+  background-color: #004B8D;
 }
 
-p {
-  color: #00B7FF;
+.bg-ciec-r, .btn-ciec-r {
+  background-color: #F2552C;
 }
 
-.message {
-  border: 1px solid #999;
-  padding: 10px;
+.bg-ciec-g, .btn-ciec-g {
+  background-color: #5A7247;
 }
 
-.sausages {
-  color: lighten($warning, 20%);
+
+.thumbnail {
+  height: 100px;
+  width: 100px;
 }
 
-.success {
-  @extend .message;
-  border-color: $success;
-  padding: 25px
-}
-
-.error {
-  @extend .message;
-  border-color: $error;
-  padding: 50px
-}
-
-.warning {
-  @extend .message;
-  border-color: $warning;
-  padding: 75px
+.card-image-title, .card-image-text {
+  font-size: 0.5rem;
 }

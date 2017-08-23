@@ -2,22 +2,16 @@
     ViewData["Title"] = "<%= controllerName %>";
 }
 
-<h2><%= controllerName %></h2>
+<h2 class="invisible"><%= controllerName %></h2>
 
 <h3><a href=''></a></h3>
 
 <% for(var i=0; i < posts.length; i++) { %>
-    <figure>
-        <% if (posts[i].link_image) { %>
-            <a href='<%= posts[i].url %>'>
-                <img src="<%= posts[i].link_image %>" />
-            </a>
-        <% } else { %>
-            <a href='<%= posts[i].url %>'>
-                <%= posts[i].title.replace('@', '@@') %>
-            </a>
-        <% } %>
-        <figcaption><%= posts[i].summary.replace('@', '@@') %></figcaption>
-    </figure>
-    
+    <div class="card" style="width: 20rem;">
+        <div class="card-body">
+            <h4 class="card-title"><%= posts[i].title.replace('@', '@@') %></h4>
+            <p class="card-text"><%= posts[i].summary.replace('@', '@@') %></p>
+            <a href="<%= posts[i].url %>" class="card-link">View</a>
+        </div>
+    </div>
 <% } %>
